@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 import { MaterialModule } from './material/material.module';
+import { HumanResourcesModule } from './human-resources/human-resources.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { MaterialModule } from './material/material.module';
     AppComponent
   ],
   imports: [
+    HumanResourcesModule,
     MaterialModule,
     BrowserModule,
     BrowserAnimationsModule
