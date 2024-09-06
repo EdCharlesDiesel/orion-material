@@ -46,3 +46,14 @@ mat-sidenav-content{
 .expanded {
   width: 250px;   
 }
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-top: 22px;
+}
+
+.example-full-width {
+  width: 100%;
+}
