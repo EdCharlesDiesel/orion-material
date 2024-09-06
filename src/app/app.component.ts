@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Shift } from './shiftItem';
+import { Shift } from './human-resources/shiftItem';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,5 @@ import { Shift } from './shiftItem';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'orion material';  
+  title = 'Orion e-Commerce';  
 }
