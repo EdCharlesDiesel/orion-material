@@ -4,6 +4,13 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
+MatSortModule
 
 @NgModule({
   imports: [ 
@@ -11,6 +18,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule, 
     MatMenuModule,
     MatMenuModule,
+    MatInputModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule, 
