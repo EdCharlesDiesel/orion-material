@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
+import { StockMarketEconomicCalendarComponent } from './stock-market-economic-calendar/stock-market-economic-calendar.component';
 
 
 @NgModule({
@@ -32,33 +33,34 @@ import { CommonModule } from '@angular/common';
     ToolbarTopMenuComponent,
     HumanResourcesComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    // StockMarketEconomicCalendarComponent
     
   ],
-  imports: [    
+  imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-
-    MatButtonModule, 
-    MatToolbarModule, 
-    MatIconModule, 
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
     MatBadgeModule,
-    MatTableModule, 
-    MatCheckboxModule, 
-    MatFormFieldModule, 
+    MatTableModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
     MatInputModule,
     MatSlideToggleModule,
     MatSidenavModule,
     MatListModule,
     MatAutocompleteModule,
-    BrowserModule, 
-    HttpClientModule, 
-    AppRoutingModule, 
-    FormsModule
-  ],  
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    StockMarketEconomicCalendarComponent
+],  
   providers: [],
   bootstrap: [AppComponent],
 })
