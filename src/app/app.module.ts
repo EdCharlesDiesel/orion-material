@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@ngbracket/ngx-layout';
 import { RegisterComponent } from './register/register.component';
+import { LoginPageComponent } from './core/auth/login/pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RegisterComponent } from './register/register.component';
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
+    LoginPageComponent,
     
   ],
   imports: [

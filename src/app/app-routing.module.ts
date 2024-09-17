@@ -8,8 +8,8 @@ import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'home', component: HomeComponent, title: "Home" },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },  
+  // { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, title: "Dashboard" },
   { path: 'calendar', component: StockMarketEconomicCalendarComponent, title: "Calendar" },      
   { path: 'login', component: LoginComponent },
