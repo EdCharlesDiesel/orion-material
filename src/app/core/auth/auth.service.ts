@@ -1,13 +1,13 @@
 import {DestroyRef, Injectable, inject, signal, WritableSignal} from '@angular/core';
 import {HttpClient, HttpContext} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {Observable} from "rxjs";
+import {catchError, Observable, of, tap} from "rxjs";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {environment} from "../../../environments/environment.development";
-import {Login} from "./login/interfaces";
+import {Login} from "./../auth/login/interfaces/login.interface";
 import {User} from "./user.interface";
-import {LoginResponse} from "./login/types/login-response.type";
-import {LoginSuccess} from "./login/interfaces";
+import {LoginResponse} from "./../auth/login/types/login-response.type.ts";
+import {LoginSuccess} from "./../auth/login/interfaces/login-success.interface";
 import {IS_PUBLIC} from "./auth.interceptor";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
@@ -43,7 +43,7 @@ export class AuthService {
         tap(data => {
           const loginSuccessData = data as LoginSuccess;
           this.storeTokens(loginSuccessData);
-          this.scheduleTokenRefresh(loginSuccessData.token);
+  //        this.scheduleTokenRefresh(loginSuccessData.token);
           this.router.navigate(['/']);
         })
       );
@@ -65,5 +65,23 @@ export class AuthService {
   storeTokens(data: LoginSuccess): void {
     localStorage.setItem('token', data.token);
     localStorage.setItem('refresh_token', data.refresh_token);
+  }
+
+  refreshToken(): Observable<LoginResponse | null> {
+    const refresh_token = localStorage.getItem('refresh_token');
+    if (!refresh_token) {
+      return of();
+    }
+
+    return this.http.post<LoginResponse>(
+      `${environment.apiUrl}/token/refresh`, {refresh_token}, this.CONTEXT)
+      .pipe(
+        catchError(() => of()),
+        tap(data => {
+          const loginSuccessData = data as LoginSuccess;
+          this.storeTokens(loginSuccessData);
+          this.scheduleTokenRefresh(loginSuccessData.token);
+        })
+      );
   }
 }
