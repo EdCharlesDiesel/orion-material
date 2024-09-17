@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AboutComponent } from './about/about.component';
 import { ToolbarTopMenuComponent } from './layouts/toolbar/toolbar-top-menu/toolbar-top-menu.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,7 +13,9 @@ import { CommonModule } from '@angular/common';
 import { StockMarketEconomicCalendarComponent } from './stock-market-economic-calendar/stock-market-economic-calendar.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@ngbracket/ngx-layout';
-import { RegisterComponent } from './core/auth/register/register.component';
+import { LoginComponent } from './_security/login/login.component';
+import { JwtInterceptor } from '@auth0/angular-jwt';
+import { RegisterComponent } from './_security/register/register.component';
 
 
 @NgModule({
@@ -22,8 +24,8 @@ import { RegisterComponent } from './core/auth/register/register.component';
     AboutComponent,
     ToolbarTopMenuComponent,    
     HomeComponent,
-    DashboardComponent,    
-    RegisterComponent   
+    DashboardComponent,        
+     LoginComponent   
     
   ],
   imports: [
@@ -40,7 +42,9 @@ import { RegisterComponent } from './core/auth/register/register.component';
     FormsModule,
     StockMarketEconomicCalendarComponent
 ],  
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

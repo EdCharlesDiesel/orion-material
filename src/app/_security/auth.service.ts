@@ -3,11 +3,11 @@ import {HttpClient, HttpContext} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {catchError, Observable, of, tap} from "rxjs";
 import {JwtHelperService} from "@auth0/angular-jwt";
-import {environment} from "../../../environments/environment.development";
-import {Login} from "./../auth/login/interfaces/login.interface";
+import {environment} from "../../environments/environment.development";
+import {Login} from "../core/auth/login/interfaces/login.interface";
 import {User} from "./user.interface";
-import {LoginResponse} from "./../auth/login/types/login-response.type.ts";
-import {LoginSuccess} from "./../auth/login/interfaces/login-success.interface";
+import {LoginResponse} from "../core/auth/login/types/login-response.type.ts";
+import {LoginSuccess} from "../core/auth/login/interfaces/login-success.interface";
 import {IS_PUBLIC} from "./auth.interceptor";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
@@ -15,6 +15,9 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   providedIn: 'root'
 })
 export class AuthService {
+    getToken() {
+        throw new Error('Method not implemented.');
+    }
   private readonly http = inject(HttpClient);
   private readonly router = inject(Router);
   private readonly jwtHelper = inject(JwtHelperService);
@@ -80,7 +83,7 @@ export class AuthService {
         tap(data => {
           const loginSuccessData = data as LoginSuccess;
           this.storeTokens(loginSuccessData);
-          this.scheduleTokenRefresh(loginSuccessData.token);
+          //this.scheduleTokenRefresh(loginSuccessData.token);
         })
       );
   }

@@ -1,8 +1,7 @@
-// ...
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { ApplicationConfig } from "@angular/core";
 import {JwtModule} from "@auth0/angular-jwt";
-import { authInterceptor } from "./core/auth/auth.interceptor";
+import { authInterceptor } from "./_security/auth.interceptor";
 
 export const appConfig: ApplicationConfig = {
   providers: [ 
