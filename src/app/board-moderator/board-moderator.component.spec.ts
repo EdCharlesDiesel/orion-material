@@ -6,10 +6,12 @@ describe('BoardModeratorComponent', () => {
   let component: BoardModeratorComponent;
   let fixture: ComponentFixture<BoardModeratorComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [BoardModeratorComponent]
-    });
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(BoardModeratorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
