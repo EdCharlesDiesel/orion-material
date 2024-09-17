@@ -7,6 +7,8 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+
+  Roles: any = ['Admin', 'Author', 'Reader'];
   form: any = {
     username: null,
     email: null,
