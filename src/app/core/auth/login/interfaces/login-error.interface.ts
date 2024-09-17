@@ -1,2 +1,5 @@
-export interface LoginErrorInterface {
-}
+
+export interface LoginError {
+    code: number;
+    message: string;
+  }
