@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, title: "Home" },
   { path: 'dashboard', component: DashboardComponent, title: "Dashboard" },
   { path: 'calendar', component: StockMarketEconomicCalendarComponent, title: "Calendar" },
+  {path: 'login', loadComponent: () => import('./core/auth/login/pages/login-page.component')
+    .then(mod => mod.LoginPageComponent)},
   // { path: 'sign-in', component: SignInComponent },
   // { path: 'form-controls', component: TemplateFormControlsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

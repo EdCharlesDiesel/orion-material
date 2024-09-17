@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
 import { StockMarketEconomicCalendarComponent } from './stock-market-economic-calendar/stock-market-economic-calendar.component';
+import { LoginPageComponent } from './core/auth/login/pages/login-page/login-page.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { StockMarketEconomicCalendarComponent } from './stock-market-economic-ca
     HumanResourcesComponent,
     HomeComponent,
     DashboardComponent,
+    LoginPageComponent,
     // StockMarketEconomicCalendarComponent
     
   ],
