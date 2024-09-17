@@ -11,11 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
 import { StockMarketEconomicCalendarComponent } from './stock-market-economic-calendar/stock-market-economic-calendar.component';
-import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@ngbracket/ngx-layout';
-import { RegisterComponent } from './register/register.component';
-import { LoginPageComponent } from './core/auth/login/pages/login-page/login-page.component';
+import { RegisterComponent } from './core/auth/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -23,10 +22,8 @@ import { LoginPageComponent } from './core/auth/login/pages/login-page/login-pag
     AboutComponent,
     ToolbarTopMenuComponent,    
     HomeComponent,
-    DashboardComponent,
-    LoginComponent,
-    RegisterComponent,
-    LoginPageComponent,
+    DashboardComponent,    
+    RegisterComponent   
     
   ],
   imports: [
