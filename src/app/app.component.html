@@ -1,10 +1,19 @@
-
 <!-- Toolbar -->
 <mat-toolbar color="primary" class="app-header">
-    <span class="nav-tool-items">
-      <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
-      <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+  <mat-toolbar-row class="custom-toolbar">
+    <span class="nav-tool-items-start">
+      <a mat-button routerLink="login" routerLinkActive="active">Sales</a> 
+      <a mat-button routerLink="login" routerLinkActive="active">Production</a> 
+      <a mat-button routerLink="login" routerLinkActive="active">HR</a> 
+      <a mat-button routerLink="login" routerLinkActive="active">Purchasing</a> 
+      <a mat-button routerLink="login" routerLinkActive="active">Clients</a>      
     </span>
-  </mat-toolbar>
-  <app-toolbar-top-menu></app-toolbar-top-menu>  
-  <router-outlet></router-outlet>
+
+    <span class="nav-tool-items ">
+      <a mat-button routerLink="login" routerLinkActive="active">Log in</a> |
+      <a mat-button  routerLink="register" routerLinkActive="active">Register</a>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-toolbar-top-menu></app-toolbar-top-menu>
+<router-outlet></router-outlet>

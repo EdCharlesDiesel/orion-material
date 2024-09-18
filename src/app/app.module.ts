@@ -15,6 +15,7 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@ngbracket/ngx-layout';
 import { JwtInterceptor } from '@auth0/angular-jwt';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LoginComponent } from './components/login/login.component';
     ToolbarTopMenuComponent,    
     HomeComponent,
     DashboardComponent,        
-    LoginComponent       
+    LoginComponent,
+    RegisterComponent       
   ],
   imports: [
     CommonModule,

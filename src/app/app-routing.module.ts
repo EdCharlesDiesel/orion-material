@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StockMarketEconomicCalendarComponent } from './components/stock-market-economic-calendar/stock-market-economic-calendar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: '',component:HomeComponent },  
   { path: 'home',component:HomeComponent, title: "Home"},    
   { path: 'login', component:LoginComponent, title: "Login"},
+  { path: 'register', component:RegisterComponent, title: "Register"},
   { path: 'dashboard', component: DashboardComponent, title: "Dashboard",  },
   { path: 'calendar', component: StockMarketEconomicCalendarComponent, title: "Calendar" },  
 ];
