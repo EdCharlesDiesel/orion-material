@@ -10,12 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
-import { StockMarketEconomicCalendarComponent } from './stock-market-economic-calendar/stock-market-economic-calendar.component';
+import { StockMarketEconomicCalendarComponent } from './components/stock-market-economic-calendar/stock-market-economic-calendar.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@ngbracket/ngx-layout';
-import { LoginComponent } from './_security/login/login.component';
 import { JwtInterceptor } from '@auth0/angular-jwt';
-import { RegisterComponent } from './_security/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -25,8 +24,7 @@ import { RegisterComponent } from './_security/register/register.component';
     ToolbarTopMenuComponent,    
     HomeComponent,
     DashboardComponent,        
-     LoginComponent   
-    
+    LoginComponent       
   ],
   imports: [
     CommonModule,
@@ -44,7 +42,11 @@ import { RegisterComponent } from './_security/register/register.component';
 ],  
   providers: [
     {
-      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}],
+      provide: HTTP_INTERCEPTORS, 
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
